@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body class="body">
+    <form class="form">
+        <div class="form-row">
+            <Label class="form-group">
+                <span class="form-hint">Введите ваше имя</span>
+                <input class="field field_Name" type="text" placeholder="Например, Петя" required>
+            </Label>
+        </div>
+        <div class="form-row">
+            <Label class="form-group">
+                <span class="form-hint">Введите ваше email</span>
+                <input class="field field_Email" type="email" placeholder="Например, petya3000@gmail.com" required>
+            </Label>
+        </div>
+        <div class="form-row">
+            <Label class="form-group">
+                <span class="form-hint">Введите ваше сообщение</span>
+                <textarea class="textarea field field_Message" placeholder="Здравствуйте, я ..." required></textarea>
+            </Label>
+        </div>
+        <div class="form-row">
+            <button class="button button_Push">Отправить</button>
+            <button class="button button_Clear">Очистить</button>
+        </div>
+    </form>
+    <script src="./form.js"></script>
+</body>
+</html>

@@ -94,17 +94,32 @@ a:hover {
   align-items: center;
 }
 
-.header__nav {
-  @media screen and (max-width: 999px) {
+.header__nav1 {
+  @media screen and (max-width: 958px) {
     display: none;
+  }
+}
+.header__nav2 {
+  @media screen and (min-width: 959px) {
+    display: block;
+  }
+}
+
+.header__nav-btn1 {
+  @media screen and (min-width: 959px) {
+    display: block;
+  }
+}
+
+.header__nav-btn2 {
+  @media screen and (max-width: 958px) {
+    display: block;
   }
 }
 
 .header__nav-btn {
-  /* display: none; */
-
-  @media screen and (max-width: 999px) {
-    display: block;
+  @media screen and (min-width: 959px) {
+    display: none;
   }
 }
 
@@ -162,7 +177,7 @@ a:hover {
 
   @media screen and (max-width: 999px) {
     font-size: 14px;
-    }
+  }
 }
 
 .info::before {
@@ -203,8 +218,8 @@ a:hover {
   background-color: var(--white);
   border-radius: 20px;
   position: absolute;
-  transition-duration: .25s;
-  transition-delay: .25s;    
+  transition-duration: 0.25s;
+  transition-delay: 0.25s;
 }
 .nav-icon span:before {
   left: 0;
@@ -215,8 +230,8 @@ a:hover {
   background-color: var(--white);
   content: "";
   border-radius: 20px;
-  transition-duration: .25s;
-  transition: transform .25s, top .25s .25s;
+  transition-duration: 0.25s;
+  transition: transform 0.25s, top 0.25s 0.25s;
 }
 .nav-icon span:after {
   left: 0;
@@ -227,25 +242,24 @@ a:hover {
   background-color: var(--white);
   content: "";
   border-radius: 20px;
-  transition-duration: .25s;
-  transition: transform .25s, top .25s .25s;
+  transition-duration: 0.25s;
+  transition: transform 0.25s, top 0.25s 0.25s;
 }
 .nav-icon.open span {
   transition-duration: 0.1s;
-  transition-delay: .25s;
+  transition-delay: 0.25s;
   background: transparent;
 }
 .nav-icon.open span:before {
-  transition: top .25s, transform .25s .25s;
+  transition: top 0.25s, transform 0.25s 0.25s;
   top: 0px;
   transform: rotateZ(-45deg);
 }
 .nav-icon.open span:after {
-  transition: top 0.4s, transform .25s .25s;
+  transition: top 0.4s, transform 0.25s 0.25s;
   top: 0px;
   transform: rotateZ(45deg);
 }
-
 
 .header__top-row--mobile {
   position: fixed;
@@ -269,6 +283,10 @@ a:hover {
   z-index: 11;
   top: 30px;
   right: 15px;
+
+  @media screen and (max-width: 400px) {
+    position: unset;
+  }
 }
 
 .header__top-row--mobile .nav__list {
@@ -377,7 +395,6 @@ a:hover {
   @media screen and (max-width: 955px) {
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
-
 }
 
 .apparmnents__tittle {
@@ -463,7 +480,7 @@ a:hover {
   }
 }
 
-/* --------------------------------------------------------- */
+/* -------------------------CTA c формой обратной связи-------------------------------- */
 
 .cta {
   padding: 180px 0;
@@ -477,9 +494,15 @@ a:hover {
     linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
     url("./img/cta_bg.jpg"), #c4c4c4;
 
-    @media screen and (max-width: 799px) {
-      padding: 60px, 0;
-    }
+  @media screen and (max-width: 799px) {
+    padding: 60px, 0;
+  }
+}
+
+.cta_container {
+  @media screen and (max-width: 999px) {
+    width: 80vw;
+  }
 }
 
 .cta__title {
@@ -492,7 +515,7 @@ a:hover {
   gap: 30px;
 
   @media screen and (max-width: 799px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
@@ -502,7 +525,7 @@ a:hover {
   gap: 30px;
 
   @media screen and (max-width: 999px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
@@ -516,9 +539,19 @@ a:hover {
     font-size: 13px;
   }
 }
+.cta__form {
+  display: flex;
+  justify-content: end;
+
+  @media screen and (max-width: 799px) {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
 .field {
-  width: 255px;
+  width: 100%;
   height: 50px;
   padding: 12px;
   text-align: center;
@@ -547,6 +580,11 @@ a:hover {
   color: var(--privacy);
   /* padding: 5px; */
   line-height: 1.23;
+
+  @media screen and (max-width: 799px) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .form_button {
@@ -568,10 +606,11 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* --------------------------------------------------------- */
+/* ---------------------------Видео------------------------------ */
 
 .video {
   position: relative;
+  overflow: hidden;
 }
 
 .video::after {
@@ -617,6 +656,16 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 500px) {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.video__img {
+  max-width: 100%;
+  /* height: auto; */
 }
 
 .video__link:hover .video__icon {
@@ -626,14 +675,22 @@ a:hover {
   filter: saturate(1.3);
 }
 
-/* --------------------------------------------------------- */
+/* ----------------------------Секция с картой----------------------------- */
 
 .secrion__map {
   padding: 180px 0;
   position: relative;
+
+  @media screen and (max-width: 999px) {
+    padding: 90px 0;
+  }
 }
 .section__map-tittle {
   margin-bottom: 88px;
+
+  @media screen and (max-width: 999px) {
+    margin-bottom: 44px;
+  }
 }
 
 .map {
@@ -655,25 +712,36 @@ a:hover {
   z-index: -1;
 }
 
-/* --------------------------------------------------------- */
+/* -----------------------------Обратная связь---------------------------- */
 
 .feedback {
   padding-bottom: 180px;
+
+  @media screen and (max-width: 999px) {
+    padding-bottom: 90px;
+  }
 }
 
 .feedback__tittle {
   margin-bottom: 38px;
+
+  @media screen and (max-width: 999px) {
+    margin-bottom: 19px;
+  }
 }
 
 .feedback__form {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   align-items: center;
+
+  @media screen and (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* --------------------------------------------------------- */
+/* ----------------------------Подвал----------------------------- */
 
 .footer {
   padding-top: 72px;
@@ -681,12 +749,22 @@ a:hover {
   background-color: var(--footer-bg);
   font-size: 14px;
   letter-spacing: 0.05rem;
+
+  @media screen and (max-width: 800px) {
+    padding-top: 36px;
+    padding-bottom: 25px;
+  }
 }
 
 .footer__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 40px;
+  }
 }
 
 .footer__logo {
@@ -718,4 +796,88 @@ a:hover {
   transform: scale(1.1);
 }
 
-/* --------------------------------------------------------- */
+/* ----------------------------Youtube----------------------------- */
+
+.youtubelightbox {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+  text-align: center;
+}
+
+.youtubelightbox:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.youtubelightbox:after {
+  background: black;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.youtubelightbox__centeredchild {
+  position: relative;
+  z-index: 20;
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+}
+
+.youtubelightbox__videowrapper {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.youtubelightbox__videowrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------------Карта----------------------------- */
+
+[class*="gototech"] {
+  display: none !important;
+}
+
+.map [class*="searchbox"] {
+  opacity: 0;
+}
+.map:hover [class*="searchbox"] {
+  opacity: 1;
+}
+
+.map [class*="gototaxi__container"] {
+  opacity: 0;
+}
+.map:hover [class*="gototaxi__container"] {
+  opacity: 1;
+}
+
+.map [class*="gotoymaps__container"] {
+  opacity: 0;
+}
+.map:hover [class*="gotoymaps__container"] {
+  opacity: 1;
+}
+
+[class*="balloon"] {
+  border-radius: 8px;
+}

@@ -8,14 +8,14 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header none">
+    <header class="header">
       <div class="header__top">
         <div class="container">
           <div class="header__top-row">
             <a href="#">
               <img src="./img/first-screen__logo.svg" alt="LoftHous" />
             </a>
-            <div class="header__nav">
+            <div class="header__nav1 header__nav2 header__nav">
               <nav class="nav">
                 <ul class="nav__list">
                   <li><a href="#">О комплексе</a></li>
@@ -55,7 +55,7 @@
       </div>
     </header>
     <main>
-      <section class="benefits none">
+      <section class="benefits">
         <h2 class="visually_hidden">Преимущества ЖК</h2>
 
         <div class="container container_min">
@@ -85,7 +85,7 @@
         </div>
       </section>
 
-      <section class="appartments none">
+      <section class="appartments">
         <div class="container">
           <div class="apparmnents__tittle">
             <h2 class="tittle__two">Наши квартиры</h2>
@@ -127,7 +127,7 @@
         </div>
       </section>
       <section class="cta">
-        <div class="container">
+        <div class="container cta_container">
           <div class="cta__title">
             <h2 class="tittle__two">Хотите посмотреть?</h2>
           </div>
@@ -148,6 +148,7 @@
                   class="field_input field"
                 />
                 <input
+                  data-tel-input
                   type="text"
                   name=""
                   id=""
@@ -167,29 +168,32 @@
         </div>
       </section>
 
-      <section class="video none">
+      <section class="video">
+        <h2 class="visually_hidden">видео ЖК Loft House</h2>
         <div class="container">
-          <h2 class="visually_hidden">видео ЖК Loft House</h2>
-
-          <a href="" class="video__link">
+          <a
+            href="https://www.youtube.com/watch?v=bhJNL9JUsnY"
+            data-youtubeLightbox
+            class="video__link"
+          >
             <img class="video__icon" src="./img/Vector (2).svg" alt="" />
             <img class="video__img" src="./img/Rectangle 2.jpg" alt="" />
           </a>
         </div>
       </section>
 
-      <section class="secrion__map none">
+      <section class="secrion__map">
         <div class="container">
           <div class="section__map-tittle">
             <h2 class="tittle__two">Район на карте</h2>
           </div>
           <div class="section-map__map">
-            <div class="map"></div>
+            <div class="map" id="map"></div>
           </div>
         </div>
       </section>
 
-      <section class="feedback none">
+      <section class="feedback">
         <div class="container">
           <div class="feedback__tittle">
             <h2 class="tittle__two">Есть вопросы?</h2>
@@ -207,21 +211,24 @@
               class="field_input field"
             />
             <input
+              data-tel-input
               type="text"
               name=""
               id=""
               placeholder="Ваш телефон"
               class="field_input field"
             />
-            <button type="submit" class="field form_button">
-              Посмотреть район
-            </button>
+            <div>
+              <button type="submit" class="field form_button">
+                Посмотреть район
+              </button>
+            </div>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer none">
+    <footer class="footer">
       <div class="container">
         <div class="footer__grid">
           <div class="footer__logo">
@@ -286,6 +293,24 @@
         </div>
       </div>
     </footer>
-    <script src="./2.js"></script>
+
+    <div id="youtubelightbox" class="youtubelightbox">
+      <div class="youtubelightbox__centeredchild">
+        <div class="youtubelightbox__videowrapper">
+          <div id="youtubelightboxPlayer"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=b6f4c76c-9447-4608-a9a7-281e6a7152bd&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+
+    <script src="./JS/mask.js"></script>
+    <script src="./JS/mask_list.js"></script>
+
+    <script src="./JS/youtubeLightbox.js"></script>
+
+    <script src="./JS/2.js"></script>
   </body>
 </html>
